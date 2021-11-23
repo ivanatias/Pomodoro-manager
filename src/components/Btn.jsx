@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 
-const Btn = ({ role, variant, callback }) => {
+const Btn = ({ children, role, variant, type, callback }) => {
   const checkBtnRole = () => {
     if (role === "play") return <FaPlay size="20" />;
 
@@ -13,8 +13,8 @@ const Btn = ({ role, variant, callback }) => {
   };
 
   return (
-    <Button className="m-1" variant={variant}>
-      {checkBtnRole()}
+    <Button type={type} className="m-1" variant={variant} onClick={callback}>
+      {role ? checkBtnRole() : children}
     </Button>
   );
 };

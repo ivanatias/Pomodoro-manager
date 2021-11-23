@@ -4,7 +4,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import Btn from "./Btn";
 import "react-circular-progressbar/dist/styles.css";
 
-const Timer = () => {
+const Timer = ({ showSettings }) => {
   return (
     <>
       <Row className="pt-1">
@@ -20,7 +20,7 @@ const Timer = () => {
       </Row>
       <Row>
         <Col className="d-flex justify-content-center">
-          <Btn role="settings" variant="secondary" />
+          <Btn role="settings" variant="secondary" callback={showSettings} />
         </Col>
       </Row>
     </>
